@@ -4,15 +4,28 @@
 The Blog app will be a classic example of a blog website. It will show the list of posts and empower readers to interact with them by adding comments and liking posts.
     
 ## Built With
+- Ruby
+- PostgreSQL
+- Rails
 
+### Setup
 
+- Clone the repository:
 
-## Live Demo
+  $ `git clone https://github.com/LuisSalas94/blog-app`
 
-[Live Demo Link]()
+  $ `cd blog-app`
+
+- Create the databases:
+  
+  $ `rake db:create`
+
+- Run the code:
+  
+  $ `rails s`
+
 
 ## Author
-
 
 - GitHub: [@LuisSalas94](https://github.com/LuisSalas94)
 - LinkedIn: [Fernando Salas](https://www.linkedin.com/in/luisfernandosalasgave/)
