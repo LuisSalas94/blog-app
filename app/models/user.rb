@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :likes
 
   validates :name, presence: true
-  validates :posts_counter, numericality:{only_integer: true, greater_than_or_equal_to: 0}
+  validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def self.find_most_recent_post(user_id)
     Post.where(author_id: user_id).last(3)
