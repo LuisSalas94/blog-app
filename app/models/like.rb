@@ -4,10 +4,10 @@ class Like < ApplicationRecord
 
   #Update likes counter 
   after_create do 
-    self.update_like_counter
+    update_like_counter
   end
 
-  def self.update_like_counter
+  def update_like_counter
     if post.likes_counter.nil?
       post.update(likes_counter: 1)
     else 
