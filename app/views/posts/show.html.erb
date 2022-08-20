@@ -10,10 +10,11 @@
   <p>
     <%= @post.text %>
   </p>
+  <%= render "form" %>
 </div>
 
 <div class='comment_element'>
-  <% @post.comments.each do |comment| %>
+  <% @comments.each do |comment| %>
     <p>
       <strong>
         <%= comment.author.name %>:
@@ -21,4 +22,10 @@
       <%= comment.text %>
     </p>
   <% end %>
+</div>
+
+<%= render 'comment_form' %>
+
+<div>
+  <%= link_to 'Paginations', users_path%>
 </div>
