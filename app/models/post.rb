@@ -4,14 +4,24 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   validates :title, presence: true, length: { maximum: 250 }
-  validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :text, presence :true
+  validates :comments_counter, comparison: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :likes_counter, comparison: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  def self.update_post(user)
-    user.increment!(:posts_counter)
+  after_create do 
+    self.update_post
+  end
+
+
+  def self.update_post
+    if author.posts_counter.nil?
+      author.update(posts_counter: 1)
+    else
+      author.increment!(:posts_counter)
+    end
   end
 
   def self.find_most_recent_comments(post_id)
-    Comment.where(post_id: post_id).last(5)
+    comments.where(post_id: post_id).last(5)
   end
 end
