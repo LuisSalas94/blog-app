@@ -105,7 +105,8 @@ h3 {
   justify-content: center;
 }
 
-.button_all a {
+.button_all a,
+  input[type=submit]{
   box-shadow: 4px 4px rgba(0, 0, 0, 0.9);
   border: 1px solid black;
   border-radius: 3px;
