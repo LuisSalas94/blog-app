@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     @current_user = current_user
     @post = @current_user.posts.new(post_params)
 
-    if @post.save 
+    if @post.save
       flash[:success] = 'Post created!'
       redirect_to user_posts_path
     else
@@ -29,6 +29,7 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
     params.require(:post).permit(:title, :text, :author_id, :comments_counter, :likes_counter)
   end

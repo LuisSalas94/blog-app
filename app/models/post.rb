@@ -7,10 +7,9 @@ class Post < ApplicationRecord
   validates :comments_counter, comparison: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, comparison: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  after_create do 
+  after_create do
     update_post
   end
-
 
   def update_post
     if author.posts_counter.nil?
