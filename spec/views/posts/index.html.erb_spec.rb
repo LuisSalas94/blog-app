@@ -31,6 +31,11 @@ RSpec.describe 'posts/index.html.erb', type: :system do
       expect(page).to have_content('Hello')
     end
 
+    it 'see some of the posts body' do
+      visit user_posts_path(jhon.id)
+      expect(page).to have_content('This is my first post')
+    end
+
     it 'see first comment on post' do
       visit user_path(@first_user)
       expect(page).to have_content('This is my first post')
@@ -44,6 +49,11 @@ RSpec.describe 'posts/index.html.erb', type: :system do
     it 'see how many likes on post' do
       visit user_path(@first_user)
       expect(page).to have_content('0')
+    end
+
+    it 'see a section for pagination' do
+      visit user_posts_path(jhon.id)
+      expect(page).to have_content('Paginations')
     end
 
     it 'when click on post, go to post show page' do
