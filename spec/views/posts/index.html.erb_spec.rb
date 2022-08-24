@@ -32,7 +32,7 @@ RSpec.describe 'posts/index.html.erb', type: :system do
     end
 
     it 'see some of the posts body' do
-      visit user_posts_path(jhon.id)
+      visit user_posts_path(@first_user)
       expect(page).to have_content('This is my first post')
     end
 
@@ -52,7 +52,7 @@ RSpec.describe 'posts/index.html.erb', type: :system do
     end
 
     it 'see a section for pagination' do
-      visit user_posts_path(jhon.id)
+      visit user_posts_path(@first_user)
       expect(page).to have_content('Paginations')
     end
 
