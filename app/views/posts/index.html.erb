@@ -14,7 +14,7 @@
         </span>
       </div>
       <div class='comment_element'>
-        <% post.comments.limit(5).each do |comment| %>
+        <% post.comments.includes(:author).limit(5).each do |comment| %>
           <p>
             <strong>
               <%= comment.author.name %>:
