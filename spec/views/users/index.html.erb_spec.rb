@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe 'User', type: :system do
   describe 'index page' do
     before do
-      @first_user = User.create(name: "Bob", image: "https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg", bio: "Peruvian Chef.", posts_counter: 0)
+      # rubocop:disable Layout/LineLength
+      @first_user = User.create(name: 'Bob',
+                                image: 'https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg', bio: 'Peruvian Chef.', posts_counter: 0)
+      # rubocop:enable Layout/LineLength
     end
 
     it 'shows the right content' do
@@ -26,6 +29,5 @@ RSpec.describe 'User', type: :system do
       click_on 'Bob'
       expect(current_path).to eq(user_path(@first_user))
     end
-
   end
 end
