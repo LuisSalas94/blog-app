@@ -127,3 +127,12 @@ input[type=submit] {
 div.pagination {
   color: black;
 }
+
+.log-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-top: 30vh;
+}
