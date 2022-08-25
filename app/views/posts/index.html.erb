@@ -14,7 +14,7 @@
         </span>
       </div>
       <div class='comment_element'>
-        <% post.comments.limit(5).each do |comment| %>
+        <% post.comments.includes(:author).limit(5).each do |comment| %>
           <p>
             <strong>
               <%= comment.author.name %>:
@@ -27,6 +27,6 @@
   <% end %>
 </div>
 
-<div>
+<div class="pagination">
   <%= link_to "New Post", new_user_post_path %><%= link_to "Paginations", users_path %>
 </div>

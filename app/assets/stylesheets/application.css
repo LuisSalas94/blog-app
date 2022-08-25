@@ -123,3 +123,7 @@ input[type=submit] {
 .comment_element p {
   margin: 0;
 }
+
+div.pagination {
+  color: black;
+}

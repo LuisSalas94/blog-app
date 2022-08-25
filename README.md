@@ -24,6 +24,11 @@ The Blog app will be a classic example of a blog website. It will show the list 
   
   $ `rails s`
 
+### Testing
+- Run the tests:
+  
+  $ `rspec spec/folder_name/file_name_spec.rb`
+
 
 ## Author
 
