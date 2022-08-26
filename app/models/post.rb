@@ -20,6 +20,6 @@ class Post < ApplicationRecord
   end
 
   def self.find_most_recent_comments(post_id)
-    Comment.where(post_id: post_id).last(5)
+    Comment.where(post_id:).last(5)
   end
 end
